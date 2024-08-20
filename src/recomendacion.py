@@ -2,7 +2,7 @@ from fastapi import HTTPException
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-def vectorizar_generos_por_fecha(combined_data, indice_pelicula, chunk_size=100): #Se hace por "chunks" para abarcar el df por partes y reducir el uso de memoria
+def vectorizar_generos_por_fecha(combined_data, indice_pelicula, chunk_size=1000): #Se hace por "chunks" para abarcar el df por partes y reducir el uso de memoria
     vectorizer = TfidfVectorizer()
     
     # Ordenar las películas por fecha de lanzamiento
